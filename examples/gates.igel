@@ -1,0 +1,9 @@
+(import-file "../stdlib/gates.igel")
+
+(define-entity nand_nor (a1, a2)
+    (define-gate a1 (readline))
+    (define-gate a2 (putline))
+
+(define-architecture archbody (nand_nor)
+    (define-gate x1 (a1, 2))
+    (define-gate y1 (a2, 2))
