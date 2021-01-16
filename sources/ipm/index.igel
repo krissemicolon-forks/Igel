@@ -1,0 +1,3 @@
+;; The official package index for Igel
+(def packages
+  {circuits, "https://github.com/timo-cmd2/Igel/sources/macros/circuits.git"})
