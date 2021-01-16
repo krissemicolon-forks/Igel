@@ -1,4 +1,4 @@
 -- this file will hold a small pkgmanager for igel
-module ipm()
+function ipm()
     $system = "";
-endmodule
+end function ipm;
