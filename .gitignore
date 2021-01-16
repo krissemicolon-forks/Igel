@@ -36,9 +36,6 @@
 *.x86_64
 *.hex
 
-# makefile
-Makefile
-
 # Debug files
 *.dSYM/
 *.su
