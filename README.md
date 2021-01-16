@@ -1,2 +1,2 @@
-# Wookie
-A dynamic compiled Lisp-dialect
+# Igel
+A dynamic compiled Lisp-dialect written in VHDL
