@@ -1,0 +1,11 @@
+# tmp files
+*.tmp
+
+# binaries 
+*.o
+*.a
+*out
+*.exe
+
+# igel tmps
+*.igelm
