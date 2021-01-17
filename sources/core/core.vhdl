@@ -22,4 +22,32 @@
 -- ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 -- DEALINGS IN THE SOFTWARE.
 
-library STD;
+entity core is 
+    end entity core;
+
+    library STD;
+    use STD.textio.all;
+    library WORK;
+    use WORK.pkg_readline.all;
+    use WORK.types.all;
+    use WORK.reader.all;
+    use WORk.printer.all;
+    use WORK.environment.all;
+    use WORK.main.all;
+
+    architecture test of core is
+
+        shared variable repl_env: env_ptr;
+
+        procedure igel_READ( str: in string; ast: out igel_val_ptr; err: out igel_val_ptr ) is
+        begin
+            read_str( str, ast, err );
+        end procedure igel_READ;
+        
+        procedure starts_with( lst: inout igel_val_ptr; sym: in string; res: out boolean ) is
+        begin
+            res := lst.seq_val.all'length = 2
+                and lst.seq_val.all ( lst.seq_val.all'low ).val_type = igel_symbol
+                and lst.seq_val.all ( lst.seq_val.all'low ).string_val.all = sym;
+        end starts_with;
+    end architecture test;
