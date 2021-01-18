@@ -21,7 +21,6 @@
 -- FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
 -- ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 -- DEALINGS IN THE SOFTWARE.
-
 entity core is 
     end entity core;
 
@@ -50,4 +49,65 @@ entity core is
                 and lst.seq_val.all ( lst.seq_val.all'low ).val_type = igel_symbol
                 and lst.seq_val.all ( lst.seq_val.all'low ).string_val.all = sym;
         end starts_with;
+
+        procedure quasiquote( ast: inout igel_val_ptr; result: out igel_val_ptr );
+
+        procedure qq_loop( elt: inout igel_val_ptr; acc: inout igel_val_ptr ) is
+            variable sw: boolean := elt.val_type = igel_list;
+            variable seq: igel_seq_ptr := new igel_seq( 0 to 2 );
+        begin
+            if sw then
+                starts_with( elt, "splice-unquote", sw );
+            end if;
+
+            if sw then
+                new_symbol( "concat", seq( 0 ) );
+                seq( 1 ) := elt.seq_val( 1 );
+            else
+                new_symbol( "cons", seq( 0 ) );
+                quasiquote( elt, seq( 1 ) );
+            end if;
+
+            seq( 2 ) := acc;
+            new_seq_obj( igel_list, seq, acc );
+        end qq_loop;
+
+        procedure qq_foldr( xs: inout igel_seq_ptr; res: out igel_val_ptr ) is
+            variable seq: igel_seq_ptr := new igel_seq( 0 to -1 );
+            variable acc: igel_val_ptr;
+        begin
+            new_seq_obj( igel_list, seq, acc );
+            for i in xs'reverse_range loop
+                qq_loop( xs( i ), acc );
+            end loop;
+            res := acc;
+        end procedure qq_foldr;
+
+        procedure quasiquote( ast: inout mal_val_ptr; result: out mal_val_ptr) is
+            variable sw  : boolean;
+            variable seq : mal_seq_ptr;
+
+        begin
+            case ast.val_type is
+                when igel_list => starts_with( ast, "unquote", sw );
+                    if sw then
+                        result := ast.seq_val( 1 );
+                    else
+                        qq_foldr( ast.seq_val, result );
+                    end if;
+                
+                when igel_vector => seq := new igel_seq( 0 to 1 );
+                new_symbol( "vec", seq( 0 ) );
+                qq_foldr( ast.seq_val, seq( 1 ) );
+                new_seq_obj( igel_list, seq, result );
+                
+                when igel_symbol | igel_hashmap => seq := new igel_seq( 0 to 1 );
+                new_symbol( "quote", seq( 0 ) );
+                seq( 1 ) := ast;
+                new_seq_obj( igel_list, seq, result );
+                
+                when others => result := ast;
+            end case;
+        end procedure quasiquote;
+        -- 94 end
     end architecture test;
