@@ -1,3 +1,4 @@
+# Igel
 
 **Igel** is a Clojure'ish Lisp-dialect that compines the worlds of Hardware-description and problem-oriented programming.
 
