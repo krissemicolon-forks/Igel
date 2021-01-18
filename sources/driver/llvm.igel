@@ -1,0 +1,29 @@
+(import-file "utils.igel")
+
+(define *macros-eval-env* (new-env env-repl))
+
+(define *igel-path* (atom "."))
+(define *compile-mode* (atom "release"))
+
+(define *current-reg* (atom 0))
+(define new-reg (function* []
+    (str "%r" (swap! *current-reg* inc))))
+
+(define *current-stack-reg* (atom 0))
+(define new-stack-reg (function* []
+    (str "%sr" (swap! *current-stack-reg* inc))))
+
+(define *current-label* (atom 0))
+(define new-label (function* [role]
+    (str "label" (swap! *current-label* inc) role)))
+
+(define *current-func-name* (atom 0))
+(define new-func-name (function* []
+    (str "@igelfunc" (swap! *current-func-name* inc))))
+
+(define *functions-definitions-list* (atom []))
+(define add-function-definition (function* [code-str]
+    (swap! *functions-definitions-list* conj code-str)))
+
+(define escape-llvm-string (function* [s]
+    (replace-chars s {"\n" "\\0a" "\"" "\\22" "\\" "\\5c"})))
