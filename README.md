@@ -8,7 +8,7 @@ to run files.
 
 ## Why should I use Igel
 
-Igel is a good choice for programming on heterogeneous systems. It can be used for quantum-computing, qbit simulation, hardware-description and verification or even for eneral purpose.The compiled igel core is pretty small and compact (< 200kb). This benefits the language to embed in other programs.
+Igel is a good choice for programming on heterogeneous systems. It can be used for quantum-computing, qbit simulation, hardware-description and verification or even for eneral purpose.The compiled igel core is pretty small and compact (< 200kb). This benefits the language to be embedded into other programs.
 
 ## Features
 
