@@ -1,4 +1,4 @@
-(import-file "../stdlib/gates.igel")
+(:import-file "../stdlib/gates.igel")
 
 (define-entity nand_nor (a1, a2)
     (define-gate a1 (readline))
