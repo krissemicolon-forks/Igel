@@ -9,4 +9,8 @@
 #define IGEL_VERSION_EXTRA "-dev"
 #define IGEL_VERSION "0.1.2-dev"
 
+#define IGEL_SOURCE_LOCATION "./source"
+#define IGEL_SOURCE_CORE     "./source/core"
+#define IGEL_SOURCE_DRIVER   "./source/driver"
+
 #endif /* end of include guard: IGELCONF_H */
