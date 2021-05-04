@@ -1,0 +1,3 @@
+(define-macro greet
+  (define-function greet()
+    (print "Greets from Igel!)))
