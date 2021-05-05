@@ -109,5 +109,4 @@ entity core is
                 when others => result := ast;
             end case;
         end procedure quasiquote;
-        -- 94 end
     end architecture test;
