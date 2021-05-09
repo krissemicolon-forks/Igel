@@ -1,0 +1,6 @@
+(define require (try require (catch _ 
+  (letvar [seen (atom {"../sources/macros/require.igel" nil})]
+    (fn [filename] ;; fixme modulename
+      (if (not (contains @seen filename))
+        (do (swap seen assoc filename nil)
+          (import-file filename))))))))
