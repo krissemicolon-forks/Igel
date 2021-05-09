@@ -23,6 +23,7 @@ Igel is a good choice for programming on heterogeneous systems. It can be used f
 * Hardware-description using own macros
 * A self-hosting compiler driver
 * F-Expressions
+* C-Expressions
 * And a lot more...
 
 ## Installing project dependencies on Unix
