@@ -1,5 +1,5 @@
-
-*.igel linguist-language=Scheme
+# make it look more nice
+*.igel linguist-language=Clojure
 *.igel text eol=lf
 *.c text eol=lf
 *.h text eol=lf
