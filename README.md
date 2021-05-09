@@ -1,6 +1,6 @@
 # The Igel programming-language
 
-**Igel** is a Clojure'ish Lisp-dialect that combines the worlds of Hardware-description and problem-oriented programming.
+**Igel** is a Scheme-like Lisp-dialect that combines the worlds of Hardware-description and problem-oriented programming.
 
 There is a REPL for trying out the language, as well as the ability
 to run files. 
@@ -22,6 +22,7 @@ Igel is a good choice for programming on heterogeneous systems. It can be used f
 * More than 100 macro functions
 * Hardware-description using own macros
 * A self-hosting compiler driver
+* F-Expressions
 * And a lot more...
 
 ## Installing project dependencies on Unix
