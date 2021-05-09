@@ -2,4 +2,4 @@
 (define-function ponyfoo [foo]
     (define-function ponyfoo [pony]))
 
-(print "Rainbow ponyfoo ", x)
+(display "Rainbow ponyfoo ", x)
