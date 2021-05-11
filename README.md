@@ -24,6 +24,7 @@ Igel is a good choice for programming on heterogeneous systems. It can be used f
 * A self-hosting compiler driver
 * F-Expressions
 * C-Expressions
+* bootstrapping sub binaries
 * And a lot more...
 
 ## Installing project dependencies on Unix
