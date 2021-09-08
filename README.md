@@ -8,7 +8,7 @@ to run files.
 
 ## Why should I use Igel
 
-Igel is a good choice for programming on heterogeneous systems. It can be used for quantum-computing, qbit simulation, hardware-description and verification or even for eneral purpose.The compiled igel core is pretty small and compact (< 200kb). This benefits the language to be embedded into other programs.
+Igel is a good choice for programming on heterogeneous systems. It can be used for quantum-computing, qbit simulation, hardware-description and verification or even for general purpose.The compiled igel core is pretty small and compact (< 200kb). This benefits the language to be embedded into other programs.
 
 **work in progress**
 
@@ -18,7 +18,7 @@ Igel is a good choice for programming on heterogeneous systems. It can be used f
 * Clean implementation in VHDL
 * Small binary ( less than 200kb )
 * Great FFI's to C and VHDL
-* Big standart-library
+* Big standard-library
 * More than 100 macro functions
 * Hardware-description using own macros
 * A self-hosting compiler driver
@@ -29,7 +29,7 @@ Igel is a good choice for programming on heterogeneous systems. It can be used f
 
 ## Installing project dependencies on Unix
 
-The Igel programming-language is initially written in VHDL and iVerilog, there fore you'll need to install the dependencies.
+The Igel programming-language is initially written in VHDL and iVerilog, therefore you'll need to install the dependencies.
 
 ```bash
 # installing the GHDL and the iVerilog compilers
@@ -46,7 +46,7 @@ todo
 
 ## Compiling the Igel driver 
 
-While the core of Igel is written in Igel itselfe, you'll need to subcompile Igel with a prebuilt binary first, so it can generate a self-compiling binary. 
+While the core of Igel is written in Igel itself, you'll need to subcompile Igel with a prebuilt binary first, so it can generate a self-compiling binary. 
 Below are the instructions for each platform.
 
 ### Compiling the Igel driver on Unix
