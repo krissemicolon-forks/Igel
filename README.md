@@ -1,6 +1,6 @@
 # The Igel programming-language
 
-**Igel** is a Clojure-like Lisp-dialect that combines the worlds of Hardware-description and problem-oriented programming.
+**Igel** is a no-frills Clojure-like Lisp-dialect that combines the worlds of Hardware-description and problem-oriented programming.
 
 There is a REPL for trying out the language, as well as the ability
 to run files. 
